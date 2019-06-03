@@ -1,12 +1,12 @@
 from random import randrange
+from os import system
 
 def home():
     print("\nwelcome to batu gunting kertas game!")
     print("pick level")
     print("1. Easy")
     print("2. Impossible")
-    print("3. Not going to play")
-    print('')
+    print("3. Not going to play\n")
     user_answer = int(input("pick: "))
     return user_answer
 
@@ -32,7 +32,6 @@ def impossible_comp_pick():
         comp = choices(0)
     else : comp = choices(1)
     return user, comp
-
 
 def logic(user, comp):
     if user == choices(0):
@@ -65,15 +64,19 @@ def impossible_game():
     print(user + " vs " + comp)
     logic(user, comp)
 
-
 if __name__ == "__main__":
     on = True
     while on == True:
         ans = home()
         if ans == 1 :
             easy_game()
+            system('pause')
         elif ans == 2 :
             impossible_game()
-        else : on = False
+            system('pause')
+        else :
+            print("bye")
+            system('pause')
+            on = False
 
 
